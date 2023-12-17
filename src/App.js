@@ -1,12 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import './styles/App.css'
+import PostItem from "./components/PostItem";
+import PostList from "./components/PostList";
+// import { useState } from 'react';
 
 function App() {
+const [posts, setPosts] = useState([{id: 1, title: "JavaScript", body: 'description'},
+{id: 2, title: "JavaScript", body: 'description'},
+{id: 3, title: "JavaScript", body: 'description'}])
   return (
     <div className="App">
-      <div>1. JavaScript</div>
-      <div className="description"> JS - язык программирования</div>
-      <button>Удалить</button>
+      <PostList posts={posts}/>
     </div>
   );
 }
